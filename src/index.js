@@ -13,9 +13,7 @@ class HelloMessage extends React.Component {
     render() {
         return (
             <ApolloProvider client={client}>
-                <div>
-                    <Posts />
-                </div>
+                <Posts />
             </ApolloProvider>
         )
     }

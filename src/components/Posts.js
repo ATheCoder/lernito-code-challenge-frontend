@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import Post from './Post'
+import PostWithComments from './PostWithComments'
 
 class Posts extends React.Component{
     render(){
@@ -25,7 +26,7 @@ class Posts extends React.Component{
                         if(err) return <p>There was an error!</p>
 
                         return data.getPosts.map((post) => {
-                            return <Post {...post} />
+                            return <PostWithComments {...post} />
                         })
                     }}
                 </Query>
@@ -39,8 +40,6 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    border: 'solid',
-    flex: 1
 }
 
 export default Posts

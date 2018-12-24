@@ -9,6 +9,7 @@ class Post extends Component{
                 <div style={styles.innerContainer}>
                     <span>{senderName}</span>
                     <span>{text}</span>
+                    <span onClick={() => {this.props.openComments()}} style={{fontSize: '1.5vh'}}>{numberOfComments} Comments (Click to Show)</span>
                 </div>
             </div>
         )
@@ -32,8 +33,8 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         margin: 10,
-        height: '7vh',
-        fontSize: '2vh'
+        height: '8vh',
+        fontSize: '2vh',
     }
 }
 
