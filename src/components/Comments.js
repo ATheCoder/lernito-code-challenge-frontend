@@ -4,19 +4,19 @@ import gql from 'graphql-tag'
 
 class Comments extends Component{
     render(){
+        console.log(this.props.postId)
         return (
             <div style={styles.containerDiv}>
                 <div style={styles.topDiv}>
                     <span style={{flex: 0.5}} onClick={this.props.closeComments}>Back</span>
                     <span>Comments</span>
                 </div>
-                <Query query={gql`
+                <Query variables={{postId: this.props.postId}} query={gql`
 
-                    {
-                        getCommentsOfPost(postId: ${this.props.postId}){
-                            id,
+                    query Comments($postId: String!){
+                        getCommentsOfPost(postId: $postId){
                             text
-                        }
+                        } 
                     }
 
                 `}>
