@@ -4,7 +4,6 @@ import gql from 'graphql-tag'
 
 class Comments extends Component{
     render(){
-        console.log(this.props.postId)
         return (
             <div style={styles.containerDiv}>
                 <div style={styles.topDiv}>
@@ -24,7 +23,7 @@ class Comments extends Component{
                         if(loading) return <p>Loading ...</p>
                         if(err) return <p>There was an Error!</p>
                         return data.getCommentsOfPost.map((comment) => {
-                            return <div style={styles.commentDiv}>{comment.text}</div>
+                            return <div key={comment.id} style={styles.commentDiv}>{comment.text}</div>
                         })
                     }}
                 </Query>

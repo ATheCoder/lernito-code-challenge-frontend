@@ -4,6 +4,8 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import gql from 'graphql-tag'
 import Posts from './components/Posts'
+require("babel-core/register");
+require("babel-polyfill");
 
 const client = new ApolloClient({
     uri: "http://localhost:3000/graphql"

@@ -12,7 +12,6 @@ class PostWithComments extends Component{
     }
 
     openComments(){
-        console.log(this)
         this.setState({isCommentsOpen: true})
     }
 

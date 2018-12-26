@@ -27,7 +27,8 @@ const styles = {
         flex: 1
     },
     image: {
-        flexGrow: 1
+        flexGrow: 1,
+        width: '100%'
     },
     innerContainer: {
         display: 'flex',
